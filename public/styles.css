@@ -34,10 +34,6 @@ h1 {
   transform: rotate(180deg);
 }
 
-#stick {
-  vertical-align: top;
-}
-
 .App-header {
   text-align: center;
   background-color: #222;
