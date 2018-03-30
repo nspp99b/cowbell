@@ -16,7 +16,7 @@ class App extends Component {
     })
     if (newVal == true) {
       let dunk = new Audio(cow)
-      dunk.play()
+      setTimeout(function(){ dunk.play(); }, 550);
     }
   }
 
