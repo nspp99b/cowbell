@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Cowbell from './components/cowbell'
 import Stick from './components/stick'
+import cow from './sounds/cowbell.mp3'
 
 class App extends Component {
 
@@ -13,6 +14,10 @@ class App extends Component {
     this.setState({
       animateStick: newVal
     })
+    if (newVal == true) {
+      let dunk = new Audio(cow)
+      dunk.play()
+    }
   }
 
   render() {
