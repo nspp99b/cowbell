@@ -6,6 +6,8 @@
 
 .hit-cowbell {
   vertical-align: top;
+  position: relative;
+  margin-left: -10px;
   animation-name: hit-cowbell-animation;
   animation-delay: 0.5s;
   animation-duration: 0.1s;
@@ -14,6 +16,8 @@
 
 .resting-stick {
   vertical-align: top;
+  position: relative;
+  margin-left: -10px;
   transform: rotate(0deg);
 }
 
@@ -42,6 +46,7 @@ h1 {
   color: white;
 }
 
-.App-intro {
+.App-body {
+  width: 900px;
   margin-top: 30px;
 }

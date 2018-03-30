@@ -24,9 +24,9 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">MORE COWBELL</h1>
+          <h1 className="App-title">COWBELL</h1>
         </header>
-        <div className="App-intro">
+        <div className="App-body">
             < Cowbell />
           < Stick animateStick={this.state.animateStick} handleAnimate={this.handleAnimateStick}/>
         </div>
