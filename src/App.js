@@ -14,7 +14,7 @@ class App extends Component {
     this.setState({
       animateStick: newVal
     })
-    if (newVal == true) {
+    if (newVal === true) {
       let dunk = new Audio(cow)
       setTimeout(function(){ dunk.play(); }, 550);
     }
