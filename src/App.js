@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
-import Cowbell from './components/cowbell'
-import Stick from './components/stick'
-import cow from './sounds/cowbell.mp3'
+import Cowbell from './components/cowbell';
+import Stick from './components/stick';
+import PowerMeter from './components/powermeter'
+import cow from './sounds/cowbell.mp3';
 
 class App extends Component {
 
   state = {
-    animateStick: false
+    animateStick: false,
+    powerLevel: "",
+    lowPowerBox: false,
+    medPowerBox: false,
+    highPowerBox: false
   }
 
   handleAnimateStick = (e) => {
@@ -27,9 +32,10 @@ class App extends Component {
           <h1 className="App-title">COWBELL</h1>
         </header>
         <div className="App-body">
-            < Cowbell />
-          < Stick animateStick={this.state.animateStick} handleAnimate={this.handleAnimateStick}/>
-        </div>
+          <Cowbell />
+          <Stick animateStick={this.state.animateStick} handleAnimate={this.handleAnimateStick}/>
+          <PowerMeter />
+        </div>    
       </div>
     );
   }

@@ -46,3 +46,29 @@ h1 {
   width: 900px;
   margin-top: 30px;
 }
+
+.App-powermeter {
+  float: right;
+  display: flex;
+  flex-direction: row;
+}
+
+.App-powermeter-low {
+  border: 2px solid green;
+  width: 25px;
+  height: 40px;
+  margin-left: 2px;
+}
+
+.App-powermeter-med {
+  border: 2px solid orange;
+  width: 25px;
+  height: 40px;
+  margin-left: 2px;
+}
+
+.App-powermeter-high {
+  border: 2px solid red;
+  width: 25px;
+  height: 40px;
+  margin-left: 2px;
