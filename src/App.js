@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Cowbell from './components/cowbell';
 import Stick from './components/stick';
 import PowerMeter from './components/powermeter'
-import cow from './sounds/cowbell.mp3';
+import cowbellSounds from './sounds';
 
 class App extends Component {
 
@@ -55,9 +55,24 @@ class App extends Component {
     this.interval = setInterval(this.countDown, 1000)
   }
 
-  handlePlayDunk = () => {
-    let dunk  = new Audio(cow)
-    dunk.play()
+  handlePlayCowbell = () => {
+    switch (true) {
+      case this.state.keyCount < 30:
+        cowbellSounds.quietCowbell1.play();
+        break;
+      case this.state.keyCount < 60:
+        cowbellSounds.quietCowbell2.play();
+        break;
+      case this.state.keyCount < 100:
+        cowbellSounds.medCowbell2.play();
+        break;
+      case this.state.keyCount < 200:
+        cowbellSounds.highCowbell1.play();
+        break;
+      default:
+        cowbellSounds.quietCowebell1.play();
+        break;
+    }
     this.setState({
       animateStick: false
     })
@@ -68,7 +83,7 @@ class App extends Component {
       animateStick: true,
       meterTime: 'More Cowbell!'
     })
-    setTimeout(this.handlePlayDunk, 575);
+    setTimeout(this.handlePlayCowbell, 575);
   }
 
   render() {

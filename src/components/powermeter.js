@@ -14,14 +14,14 @@ const PowerMeter = (props) => {
 
   return (
     <div className="App-powermeter">
-      <div className={meterClass("App-powermeter-low", 5)()}></div>
       <div className={meterClass("App-powermeter-low", 10)()}></div>
-      <div className={meterClass("App-powermeter-low", 15)()}></div>
       <div className={meterClass("App-powermeter-low", 20)()}></div>
-      <div className={meterClass("App-powermeter-med", 25)()}></div>
-      <div className={meterClass("App-powermeter-med", 30)()}></div>
-      <div className={meterClass("App-powermeter-high", 40)()}></div>
-      <div className={meterClass("App-powermeter-high", 50)()}></div>
+      <div className={meterClass("App-powermeter-low", 30)()}></div>
+      <div className={meterClass("App-powermeter-low", 40)()}></div>
+      <div className={meterClass("App-powermeter-med", 61)()}></div>
+      <div className={meterClass("App-powermeter-med", 81)()}></div>
+      <div className={meterClass("App-powermeter-high", 100)()}></div>
+      <div className={meterClass("App-powermeter-high", 140)()}></div>
     </div>
   )
 }
