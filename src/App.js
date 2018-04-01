@@ -8,16 +8,47 @@ class App extends Component {
 
   state = {
     animateStick: false,
-    powerLevel: "",
-    lowPowerBox: false,
-    medPowerBox: false,
-    highPowerBox: false
+    keyCount: 0,
+    keyRate: 0,
+    meterTime: 3,
   }
 
-  handleAnimateStick = (e) => {
+  componentWillUpdate(nextProps, nextState) {
+    if (nextState.meterTime === 0) {
+      this.clearCountDown()
+    }
+  }
+
+  handleKeyUp = () => {
+    let k = this.state.keyCount
+    this.setState({
+      keyCount: k++
+    })
+  }
+
+  countDown = () => {
+    console.log('countDown fired and will decrement meter by 1')
+    let newVal = this.state.meterTime - 1
+    this.setState({
+      meterTime: newVal
+    })
+    console.log(this.state.meterTime)
+  }
+
+  clearCountDown = () => {
+    clearInterval(this.interval)
+  }
+
+  handleCountDownStart = () => {
+    this.interval = setInterval(this.countDown, 1000)
+  }
+
+  handleAnimateStick = () => {
     const newVal = !this.state.animateStick
     this.setState({
-      animateStick: newVal
+      animateStick: newVal,
+      meterTime: 3,
+      keyCount: 0
     })
     if (newVal === true) {
       let dunk = new Audio(cow)
@@ -34,8 +65,8 @@ class App extends Component {
         <div className="App-body">
           <Cowbell />
           <Stick animateStick={this.state.animateStick} handleAnimate={this.handleAnimateStick}/>
-          <PowerMeter />
-        </div>    
+          <PowerMeter meterTime={this.state.meterTime} start={this.handleCountDownStart} keyCount={this.state.keyCount}/>
+        </div>
       </div>
     );
   }
