@@ -37,23 +37,28 @@ class App extends Component {
 
   clearCountDown = () => {
     clearInterval(this.interval)
+    this.handleAnimateStick()
   }
 
   handleCountDownStart = () => {
     this.interval = setInterval(this.countDown, 1000)
   }
 
-  handleAnimateStick = () => {
-    const newVal = !this.state.animateStick
+  handlePlayDunk = () => {
+    let dunk  = new Audio(cow)
+    dunk.play()
     this.setState({
-      animateStick: newVal,
+      animateStick: false
+    })
+  }
+
+  handleAnimateStick = () => {
+    this.setState({
+      animateStick: true,
       meterTime: 3,
       keyCount: 0
     })
-    if (newVal === true) {
-      let dunk = new Audio(cow)
-      setTimeout(function(){ dunk.play(); }, 575);
-    }
+    setTimeout(this.handlePlayDunk, 575);
   }
 
   render() {
