@@ -29,9 +29,11 @@ body {
 h1 {
   display:inline;
   font-family: 'Ewert', cursive;
-  font-size: 30pt;
-  margin: 0;
-  padding: 0;
+  font-size: 34pt;
+}
+
+h1:hover {
+  color: orangered;
 }
 
 #cowbell {
@@ -59,14 +61,14 @@ h1 {
 .App-powermeter-low {
   border: 2px solid green;
   width: 25px;
-  height: 40px;
+  height: 45px;
   margin-left: 2px;
 }
 
 .App-powermeter-low-fill {
   border: 2px solid green;
   width: 25px;
-  height: 40px;
+  height: 45px;
   margin-left: 2px;
   background-color: limegreen;
 }
@@ -74,14 +76,14 @@ h1 {
 .App-powermeter-med {
   border: 2px solid orange;
   width: 25px;
-  height: 40px;
+  height: 45px;
   margin-left: 2px;
 }
 
 .App-powermeter-med-fill {
   border: 2px solid orange;
   width: 25px;
-  height: 40px;
+  height: 45px;
   margin-left: 2px;
   background-color: yellow;
 }
@@ -89,14 +91,14 @@ h1 {
 .App-powermeter-high {
   border: 2px solid red;
   width: 25px;
-  height: 40px;
+  height: 45px;
   margin-left: 2px;
 }
 
 .App-powermeter-high-fill {
   border: 2px solid red;
   width: 25px;
-  height: 40px;
+  height: 45px;
   margin-left: 2px;
   background-color: maroon;
 }
