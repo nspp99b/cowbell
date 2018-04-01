@@ -2,17 +2,27 @@ import React from 'react';
 
 const PowerMeter = (props) => {
 
+  const meterClass = (meterType, threshold) => {
+    return function() {
+      if (props.keyCount > threshold) {
+        return meterType + "-fill"
+      } else {
+        return meterType
+      }
+    }
+  }
+
   return (
-    <div className="App-powermeter">
-      <h2 onClick={props.start}> {props.meterTime} </h2>
-      <div id="powermeter-1" className="App-powermeter-low"></div>
-      <div id="powermeter-2" className="App-powermeter-low"></div>
-      <div id="powermeter-3" className="App-powermeter-low"></div>
-      <div id="powermeter-4" className="App-powermeter-low"></div>
-      <div id="powermeter-5" className="App-powermeter-med"></div>
-      <div id="powermeter-6" className="App-powermeter-med"></div>
-      <div id="powermeter-7" className="App-powermeter-high"></div>
-      <div id="powermeter-8" className="App-powermeter-high"></div>
+    <div className="App-powermeter" onKeyUp={props.keyUp}>
+      <h1 onClick={props.start}> {props.meterTime} </h1>
+      <div className={meterClass("App-powermeter-low", 5)()}></div>
+      <div className={meterClass("App-powermeter-low", 10)()}></div>
+      <div className={meterClass("App-powermeter-low", 15)()}></div>
+      <div className={meterClass("App-powermeter-low", 20)()}></div>
+      <div className={meterClass("App-powermeter-med", 25)()}></div>
+      <div className={meterClass("App-powermeter-med", 30)()}></div>
+      <div className={meterClass("App-powermeter-high", 40)()}></div>
+      <div className={meterClass("App-powermeter-high", 50)()}></div>
     </div>
   )
 }

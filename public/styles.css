@@ -28,6 +28,9 @@ body {
 
 h1 {
   font-family: 'Ewert', cursive;
+  font-size: 30pt;
+  margin: 0;
+  padding: 0;
 }
 
 #cowbell {
@@ -60,6 +63,14 @@ h1 {
   margin-left: 2px;
 }
 
+.App-powermeter-low-fill {
+  border: 2px solid green;
+  width: 25px;
+  height: 40px;
+  margin-left: 2px;
+  background-color: limegreen;
+}
+
 .App-powermeter-med {
   border: 2px solid orange;
   width: 25px;
@@ -67,8 +78,25 @@ h1 {
   margin-left: 2px;
 }
 
+.App-powermeter-med-fill {
+  border: 2px solid orange;
+  width: 25px;
+  height: 40px;
+  margin-left: 2px;
+  background-color: yellow;
+}
+
 .App-powermeter-high {
   border: 2px solid red;
   width: 25px;
   height: 40px;
   margin-left: 2px;
+}
+
+.App-powermeter-high-fill {
+  border: 2px solid red;
+  width: 25px;
+  height: 40px;
+  margin-left: 2px;
+  background-color: maroon;
+}

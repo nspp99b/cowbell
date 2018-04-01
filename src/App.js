@@ -9,8 +9,7 @@ class App extends Component {
   state = {
     animateStick: false,
     keyCount: 0,
-    keyRate: 0,
-    meterTime: 3,
+    meterTime: 'More Cowbell!',
   }
 
   componentWillUpdate(nextProps, nextState) {
@@ -19,11 +18,19 @@ class App extends Component {
     }
   }
 
+  componentDidMount() {
+    document.addEventListener('keyup', this.handleKeyUp)
+  }
+
   handleKeyUp = () => {
-    let k = this.state.keyCount
-    this.setState({
-      keyCount: k++
-    })
+    console.log('handleKeyUp fired')
+    let k = this.state.keyCount + 1
+    if (this.state.meterTime !== 'More Cowbell!' && this.state.meterTime !== 0) {
+      this.setState({
+        keyCount: k
+      })
+      console.log(this.state.keyCount)
+    }
   }
 
   countDown = () => {
@@ -41,6 +48,10 @@ class App extends Component {
   }
 
   handleCountDownStart = () => {
+    this.setState({
+      keyCount: 0,
+      meterTime: 3
+    })
     this.interval = setInterval(this.countDown, 1000)
   }
 
@@ -48,15 +59,15 @@ class App extends Component {
     let dunk  = new Audio(cow)
     dunk.play()
     this.setState({
-      animateStick: false
+      animateStick: false,
+      meterTime: 'More Cowbell!'
     })
   }
 
   handleAnimateStick = () => {
     this.setState({
       animateStick: true,
-      meterTime: 3,
-      keyCount: 0
+      meterTime: 3
     })
     setTimeout(this.handlePlayDunk, 575);
   }
@@ -70,7 +81,8 @@ class App extends Component {
         <div className="App-body">
           <Cowbell />
           <Stick animateStick={this.state.animateStick} handleAnimate={this.handleAnimateStick}/>
-          <PowerMeter meterTime={this.state.meterTime} start={this.handleCountDownStart} keyCount={this.state.keyCount}/>
+          <PowerMeter meterTime={this.state.meterTime} keyCount={this.state.keyCount}
+            start={this.handleCountDownStart}/>
         </div>
       </div>
     );

@@ -1,7 +1,7 @@
 import React from 'react'
 import stickUp from '../images/stickup.png'
 
-const Stick = ({animateStick, handleAnimate}) => {
+const Stick = ({animateStick}) => {
 
   const stickClass = () => {
     if (animateStick) {
@@ -12,10 +12,8 @@ const Stick = ({animateStick, handleAnimate}) => {
   }
 
   return (
-      <img className={stickClass()} onClick={handleAnimate} src={stickUp} alt="stick" height="400px"></img>
+      <img className={stickClass()} src={stickUp} alt="stick" height="400px"></img>
   )
 }
 
 export default Stick
-
-// className="animated rotateInDownRight"
