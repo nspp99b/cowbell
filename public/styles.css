@@ -34,6 +34,7 @@ h1 {
 
 h1:hover {
   color: orangered;
+  cursor: pointer;
 }
 
 #cowbell {
