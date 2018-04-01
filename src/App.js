@@ -59,15 +59,14 @@ class App extends Component {
     let dunk  = new Audio(cow)
     dunk.play()
     this.setState({
-      animateStick: false,
-      meterTime: 'More Cowbell!'
+      animateStick: false
     })
   }
 
   handleAnimateStick = () => {
     this.setState({
       animateStick: true,
-      meterTime: 3
+      meterTime: 'More Cowbell!'
     })
     setTimeout(this.handlePlayDunk, 575);
   }
@@ -76,13 +75,12 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">COWBELL</h1>
+          <h1 style={{width: '450px'}} onClick={this.handleCountDownStart}> {this.state.meterTime} </h1>
+          <PowerMeter keyCount={this.state.keyCount}/>
         </header>
         <div className="App-body">
           <Cowbell />
           <Stick animateStick={this.state.animateStick} handleAnimate={this.handleAnimateStick}/>
-          <PowerMeter meterTime={this.state.meterTime} keyCount={this.state.keyCount}
-            start={this.handleCountDownStart}/>
         </div>
       </div>
     );

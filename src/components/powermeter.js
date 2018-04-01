@@ -13,8 +13,7 @@ const PowerMeter = (props) => {
   }
 
   return (
-    <div className="App-powermeter" onKeyUp={props.keyUp}>
-      <h1 onClick={props.start}> {props.meterTime} </h1>
+    <div className="App-powermeter">
       <div className={meterClass("App-powermeter-low", 5)()}></div>
       <div className={meterClass("App-powermeter-low", 10)()}></div>
       <div className={meterClass("App-powermeter-low", 15)()}></div>
