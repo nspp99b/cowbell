@@ -1,9 +1,18 @@
 import React from 'react'
 import cowbellImage from '../images/cowbell.jpg'
 
-const Cowbell = () => {
+const Cowbell = ({animateBell}) => {
+
+  const bellClass = () => {
+    if (animateBell) {
+      return `cowbell animated ${animateBell}`
+    } else {
+      return "cowbell"
+    }
+  }
+
   return (
-      <img id="cowbell" src={cowbellImage} alt="cowbell"></img>
+      <img className={bellClass()} src={cowbellImage} alt="cowbell"></img>
   )
 }
 

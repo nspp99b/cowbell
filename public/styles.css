@@ -14,12 +14,7 @@
   animation-timing-function: ease-in;
 }
 
-.resting-stick {
-  vertical-align: top;
-  position: relative;
-  margin-left: -10px;
-  transform: rotate(0deg);
-}
+/* elements */
 
 body {
   margin: 0;
@@ -37,9 +32,7 @@ h1:hover {
   cursor: pointer;
 }
 
-#cowbell {
-  transform: rotate(180deg);
-}
+/* App Component */
 
 .App-header {
   background-color: #222;
@@ -52,6 +45,8 @@ h1:hover {
   width: 900px;
   margin-top: 30px;
 }
+
+/* Powermeter elements */
 
 .App-powermeter {
   float: right;
@@ -102,4 +97,17 @@ h1:hover {
   height: 45px;
   margin-left: 2px;
   background-color: maroon;
+}
+
+/* Cowbell and Stick Components */
+
+.cowbell {
+
+}
+
+.resting-stick {
+  vertical-align: top;
+  position: relative;
+  margin-left: -10px;
+  transform: rotate(0deg);
 }

@@ -8,6 +8,7 @@ class App extends Component {
 
   state = {
     animateStick: false,
+    animateBell: false,
     keyCount: 0,
     meterTime: 'More Cowbell!',
   }
@@ -49,6 +50,7 @@ class App extends Component {
 
   handleCountDownStart = () => {
     this.setState({
+      animateBell: false,
       keyCount: 0,
       meterTime: 3
     })
@@ -59,23 +61,40 @@ class App extends Component {
     switch (true) {
       case this.state.keyCount < 30:
         cowbellSounds.quietCowbell1.play();
+        this.setState({
+          animateStick: false,
+          animateBell: "shake",
+        })
         break;
       case this.state.keyCount < 60:
         cowbellSounds.quietCowbell2.play();
+        this.setState({
+          animateStick: false,
+          animateBell: "shake",
+        })
         break;
       case this.state.keyCount < 100:
         cowbellSounds.medCowbell2.play();
+        this.setState({
+          animateStick: false,
+          animateBell: "wobble",
+        })
         break;
       case this.state.keyCount < 200:
         cowbellSounds.highCowbell1.play();
+        this.setState({
+          animateStick: false,
+          animateBell: "fadeOutLeft",
+        })
         break;
       default:
         cowbellSounds.quietCowebell1.play();
+        this.setState({
+          animateStick: false,
+          animateBell: "shake",
+        })
         break;
     }
-    this.setState({
-      animateStick: false
-    })
   }
 
   handleAnimateStick = () => {
@@ -94,7 +113,7 @@ class App extends Component {
           <PowerMeter keyCount={this.state.keyCount}/>
         </header>
         <div className="App-body">
-          <Cowbell />
+          <Cowbell animateBell={this.state.animateBell}/>
           <Stick animateStick={this.state.animateStick} handleAnimate={this.handleAnimateStick}/>
         </div>
       </div>
