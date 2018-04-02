@@ -10,7 +10,7 @@ const highCowbell1 = new Audio(high1)
 
 export default {
   quietCowbell1,
-  quietCowbell2,
+  quietCowbell2, 
   medCowbell2,
   highCowbell1
 }
