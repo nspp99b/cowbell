@@ -23,17 +23,6 @@ class App extends Component {
     document.addEventListener('keyup', this.handleKeyUp)
   }
 
-  handleKeyUp = () => {
-    console.log('handleKeyUp fired')
-    let k = this.state.keyCount + 1
-    if (this.state.meterTime !== 'More Cowbell!' && this.state.meterTime !== 0) {
-      this.setState({
-        keyCount: k
-      })
-      console.log(this.state.keyCount)
-    }
-  }
-
   countDown = () => {
     console.log('countDown fired and will decrement meter by 1')
     let newVal = this.state.meterTime - 1
@@ -57,43 +46,14 @@ class App extends Component {
     this.interval = setInterval(this.countDown, 1000)
   }
 
-  handlePlayCowbell = () => {
-    switch (true) {
-      case this.state.keyCount < 30:
-        cowbellSounds.quietCowbell1.play();
-        this.setState({
-          animateStick: false,
-          animateBell: "shake",
-        })
-        break;
-      case this.state.keyCount < 60:
-        cowbellSounds.quietCowbell2.play();
-        this.setState({
-          animateStick: false,
-          animateBell: "shake",
-        })
-        break;
-      case this.state.keyCount < 100:
-        cowbellSounds.medCowbell2.play();
-        this.setState({
-          animateStick: false,
-          animateBell: "wobble",
-        })
-        break;
-      case this.state.keyCount < 200:
-        cowbellSounds.highCowbell1.play();
-        this.setState({
-          animateStick: false,
-          animateBell: "fadeOutLeft",
-        })
-        break;
-      default:
-        cowbellSounds.quietCowebell1.play();
-        this.setState({
-          animateStick: false,
-          animateBell: "shake",
-        })
-        break;
+  handleKeyUp = () => {
+    console.log('handleKeyUp fired')
+    let k = this.state.keyCount + 1
+    if (this.state.meterTime !== 'More Cowbell!' && this.state.meterTime !== 0) {
+      this.setState({
+        keyCount: k
+      })
+      console.log(this.state.keyCount)
     }
   }
 
@@ -103,6 +63,34 @@ class App extends Component {
       meterTime: 'More Cowbell!'
     })
     setTimeout(this.handlePlayCowbell, 575);
+  }
+
+  strikeCowbell = (sound, animation) => {
+    cowbellSounds[sound].play();
+    this.setState({
+      animateStick: false,
+      animateBell: animation
+    })
+  }
+
+  handlePlayCowbell = () => {
+    switch (true) {
+      case this.state.keyCount < 30:
+        this.strikeCowbell("quietCowbell1", "shake");
+        break;
+      case this.state.keyCount < 60:
+        this.strikeCowbell("quietCowbell2", "shake");
+        break;
+      case this.state.keyCount < 100:
+        this.strikeCowbell("medCowbell2", "wobble");
+        break;
+      case this.state.keyCount < 200:
+        this.strikeCowbell("highCowbell1", "fadeOutLeft");
+        break;
+      default:
+        this.strikeCowbell("quietCowbell1", "shake");
+        break;
+    }
   }
 
   render() {
