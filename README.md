@@ -1,5 +1,5 @@
 # COWBELL
-When you have a fever... and the only prescription is...
+When you have a fever... and the only prescription is...  
 ![cowbell](https://www.bathroomreader.com/wp-content/uploads/2014/03/Walken-Cowbell_DS.jpg)
 
 [![cowbell demo](http://img.youtube.com/vi/Ku0NpE4_GHM/0.jpg)](http://www.youtube.com/watch?v=Ku0NpE4_GHM)
