@@ -1,5 +1,5 @@
 import React from 'react'
-import cowbellImage from '../images/cowbell.jpg'
+import cowbellImage from '../images/cowbell.png'
 
 const Cowbell = ({animateBell}) => {
 
