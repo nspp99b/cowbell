@@ -2,15 +2,18 @@ import React from 'react';
 
 const PowerMeter = (props) => {
 
+  // factory for generating appropriate functions to dynamically style
+  // meters of different color and fill thresholds
+
   const meterClass = (meterType, threshold) => {
     return function() {
       if (props.keyCount > threshold) {
-        return meterType + "-fill"
+        return meterType + "-fill";
       } else {
-        return meterType
-      }
-    }
-  }
+        return meterType;
+      };
+    };
+  };
 
   return (
     <div className="App-powermeter">
@@ -23,7 +26,7 @@ const PowerMeter = (props) => {
       <div className={meterClass("App-powermeter-high", 100)()}></div>
       <div className={meterClass("App-powermeter-high", 140)()}></div>
     </div>
-  )
-}
+  );
+};
 
-export default PowerMeter
+export default PowerMeter;

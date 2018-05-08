@@ -65,7 +65,7 @@ class App extends Component {
     this.handleAnimateStick();
   };
 
-  //flip animateStick to true to trigger new class assignments
+  //flip animateStick to true to trigger new class assignment initiating stick animation
   //call play cowbell sound at visually pleasing delay
   handleAnimateStick = () => {
     this.setState({
@@ -96,7 +96,7 @@ class App extends Component {
     };
   };
 
-  //play appropriate sound and set appropriate css animation
+  //play appropriate sound, clear stick css animation, initiate bell animation
   strikeCowbell = (sound, animation) => {
     cowbellSounds[sound].play();
     this.setState({
