@@ -1,5 +1,6 @@
 import React from 'react';
 import stickUp from '../images/stickup.png';
+import './stick.css';
 
 const Stick = ({animateStick}) => {
 

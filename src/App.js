@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './styles.css';
-import './animate.min.css';
+// import './animate.min.css';
 import Cowbell from './components/cowbell';
 import Stick from './components/stick';
 import PowerMeter from './components/powermeter';

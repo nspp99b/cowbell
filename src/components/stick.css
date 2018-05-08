@@ -1,0 +1,22 @@
+/* stick animation; cowbell animation handled by animate.min.css */
+@keyframes hit-cowbell-animation {
+  from {transform: rotate(90deg);}
+  to {transform: rotate(0deg);}
+}
+
+.hit-cowbell {
+  vertical-align: top;
+  position: relative;
+  margin-left: -10px;
+  animation-name: hit-cowbell-animation;
+  animation-delay: 0.5s;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-in;
+}
+
+.resting-stick {
+  vertical-align: top;
+  position: relative;
+  margin-left: -10px;
+  transform: rotate(0deg);
+}
