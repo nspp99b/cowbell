@@ -4,7 +4,7 @@ import './powermeter.css';
 const PowerMeter = (props) => {
 
   // factory for generating appropriate functions to dynamically style
-  // meters of different color and fill thresholds
+  // meters of different color and fill keycount thresholds
 
   const meterClass = (meterType, threshold) => {
     return function() {
