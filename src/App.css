@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  display:inline;
+  font-family: 'Ewert', cursive;
+  font-size: 34pt;
+}
+
+h1:hover {
+  color: orangered;
+  cursor: pointer;
+}
+
+.App-header {
+  background-color: #222;
+  padding: 20px;
+  color: white;
+  min-width: 900px;
+}
+
+.App-body {
+  min-width: 900px;
+  margin-top: 30px;
+}
