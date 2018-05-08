@@ -109,7 +109,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 style={{width: '450px'}} onClick={this.handleCountDownStart}> {this.state.meterTime} </h1>
+          <h1 onClick={this.handleCountDownStart}> {this.state.meterTime} </h1>
           <PowerMeter keyCount={this.state.keyCount}/>
         </header>
         <div className="App-body">

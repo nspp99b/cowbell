@@ -1,19 +1,19 @@
-import React from 'react'
-import cowbellImage from '../images/cowbell.png'
+import React from 'react';
+import cowbellImage from '../images/cowbell.png';
 
 const Cowbell = ({animateBell}) => {
 
   const bellClass = () => {
     if (animateBell) {
-      return `cowbell animated ${animateBell}`
+      return `cowbell animated ${animateBell}`;
     } else {
-      return "cowbell"
-    }
-  }
+      return "";
+    };
+  };
 
   return (
       <img className={bellClass()} src={cowbellImage} alt="cowbell"></img>
-  )
-}
+  );
+};
 
-export default Cowbell
+export default Cowbell;
