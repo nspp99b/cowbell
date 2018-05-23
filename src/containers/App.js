@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import Cowbell from './components/cowbell';
-import Stick from './components/stick';
-import PowerMeter from './components/powermeter';
-import cowbellSounds from './sounds';
+import Cowbell from '../components/cowbell/cowbell';
+import Stick from '../components/stick/stick';
+import PowerMeter from '../components/powermeter/powermeter';
+import cowbellSounds from '../sounds';
 
 class App extends Component {
 
