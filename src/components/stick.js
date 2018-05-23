@@ -10,8 +10,8 @@ const Stick = ({animateStick}) => {
       return "hit-cowbell";
     } else {
       return "resting-stick";
-    }
-  }
+    };
+  };
 
   return (
       <img className={stickClass()} src={stickUp} alt="stick" height="400px"></img>
