@@ -14,19 +14,19 @@ class App extends Component {
     meterTime: 'More Cowbell!',
   };
 
-  //add keyup listener
+  // add keyup listener
   componentDidMount() {
     document.addEventListener('keyup', this.handleKeyUp);
   };
 
-  //clear the countdown when it hits 0
+  // clear the countdown when it hits 0
   componentWillUpdate(nextProps, nextState) {
     if (nextState.meterTime === 0) {
       this.clearCountDown();
     };
   };
 
-  //on header click, change metertime text to 3, use event loop to call countDown every second
+  // on header click, change metertime text to 3, use event loop to call countDown every second
   handleCountDownStart = () => {
     this.setState({
       animateBell: false,
@@ -36,7 +36,7 @@ class App extends Component {
     this.interval = setInterval(this.countDown, 1000);
   };
 
-  //decrement meterTime by 1
+  // decrement meterTime by 1
   countDown = () => {
     console.log('countDown fired and will decrement meter by 1');
     let newVal = this.state.meterTime - 1;
@@ -46,7 +46,7 @@ class App extends Component {
     console.log(this.state.meterTime);
   };
 
-  //if the countdown has begun but is not over, increment keycount
+  // if the countdown has begun but is not over, increment keycount
   handleKeyUp = () => {
     console.log('handleKeyUp fired');
     if (this.state.meterTime !== 'More Cowbell!' && this.state.meterTime !== 0) {
@@ -58,23 +58,23 @@ class App extends Component {
     };
   };
 
-  //clear the interval and begin the stick animation
+  // clear the interval and begin the stick animation
   clearCountDown = () => {
     clearInterval(this.interval);
     this.handleAnimateStick();
   };
 
-  //flip animateStick to true to trigger new class assignment initiating stick animation
-  //call play cowbell sound at visually pleasing delay
+  // flip animateStick to true to trigger new class assignment initiating stick animation
+  // call play cowbell sound at visually pleasing delay
   handleAnimateStick = () => {
     this.setState({
       animateStick: true,
       meterTime: 'More Cowbell!'
     });
-    setTimeout(this.handlePlayCowbell, 575);
+    setTimeout(this.handlePlayCowbell, 550);
   };
 
-  //call strikeCowbell with appropriate args based on keycount
+  // call strikeCowbell with appropriate args based on keycount
   handlePlayCowbell = () => {
     switch (true) {
       case this.state.keyCount < 30:
@@ -95,7 +95,7 @@ class App extends Component {
     };
   };
 
-  //play appropriate sound, clear stick css animation, initiate bell animation
+  // play appropriate sound, clear stick css animation, initiate bell animation
   strikeCowbell = (sound, animation) => {
     cowbellSounds[sound].play();
     this.setState({
