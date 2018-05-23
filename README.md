@@ -2,7 +2,7 @@
 When you have a fever... and the only prescription is...  
 ![cowbell](https://www.bathroomreader.com/wp-content/uploads/2014/03/Walken-Cowbell_DS.jpg)
 
-[![cowbell demo](http://img.youtube.com/vi/Ku0NpE4_GHM/0.jpg)](http://www.youtube.com/watch?v=Ku0NpE4_GHM)
+![cowbell demo](http://img.youtube.com/vi/Ku0NpE4_GHM/0.jpg)](http://www.youtube.com/watch?v=Ku0NpE4_GHM)
 
 ### Installing / Getting Started
 
@@ -15,6 +15,8 @@ Clone this repo, navigate into your local clone and run
 npm install && npm start
 ```
 to get dependencies installed locally and have it running at localhost:3000.
+
+Click MORE COWBELL and mash your keys to hit the cowbell as hard as you can! You have three seconds!
 
 ### License
 
