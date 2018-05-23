@@ -4,7 +4,7 @@ import './stick.css';
 
 const Stick = ({animateStick}) => {
 
-  //conditionally assign Stick class based on animateStick prop
+  // conditionally assign Stick class based on animateStick prop
   const stickClass = () => {
     if (animateStick) {
       return "hit-cowbell";

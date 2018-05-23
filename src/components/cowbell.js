@@ -4,7 +4,7 @@ import './cowbell.css';
 
 const Cowbell = ({animateBell}) => {
 
-  //conditionally assign Cowbell class based on animateBell prop
+  // conditionally assign Cowbell class based on animateBell prop
   const bellClass = () => {
     if (animateBell) {
       return `cowbell animated ${animateBell}`;
